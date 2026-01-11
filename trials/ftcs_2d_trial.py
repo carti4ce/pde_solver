@@ -30,6 +30,12 @@ def main():
         interval_ms=interval
     )
 
+    animation.save(
+        "2d_animation.gif",
+        writer="pillow",
+        fps=1000 // interval  # matches interval_ms=50
+    )
+
     plt.show()
 
 if __name__ == '__main__':

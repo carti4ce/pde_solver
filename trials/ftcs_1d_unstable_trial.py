@@ -20,6 +20,12 @@ def main():
         unstable_Us, unstable_Xs, unstable_Ts, 50, '1-D Heat: Unstable FTCS', xlabel='x', ylabel='u'
     )
 
+    animation.save(
+        "unstable_animation.gif",
+        writer="pillow",
+        fps=1000 // 50  # matches interval_ms=50
+    )
+
     plt.show()
 
 

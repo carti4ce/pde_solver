@@ -11,15 +11,21 @@ def left_bc(t):
 
 def main():
     Us, Xs, Ts = crank_nicolson_1d(
-        k=0.25, x1=0, x2=1, T=5, Nx=500, Nt=1000, initial_condition=initial_condition, left_bc=left_bc
+        k=0.1, x1=0, x2=1, T=5, Nx=500, Nt=1000, initial_condition=initial_condition, left_bc=left_bc
     )
 
     duration = 25  # seconds
     interval = (duration * 1000) / Us.shape[0]
 
     animation, fig = animate_line_plot(
-        Us, Xs, Ts, interval_ms=interval, title='Animated U(x,t) vs. X', xlabel='x', ylabel='U(x,t)',
+        Us, Xs, Ts, interval_ms=interval, title='Evolution of u(x,t)', xlabel='x', ylabel='u(x,t)',
         line_color='purple')
+
+    animation.save(
+        "sin_bc_animation.gif",
+        writer="pillow",
+        fps=1000 // interval  # matches interval_ms=50
+    )
 
     plt.show()
 
