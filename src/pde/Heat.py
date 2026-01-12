@@ -3,7 +3,7 @@ from src.grid.cartesian_grid import CartesianGrid
 
 class HeatEquation(PDE):
 
-    def __init__(self, diff=1, grid=CartesianGrid((0,1), 100), boundary_condition=None, initial_condition=None):
+    def __init__(self, diff, grid=None, boundary_condition=None, initial_condition=None):
 
         """
         :param diff: diffusion coefficient
