@@ -9,7 +9,6 @@ class CartesianGrid(Grid):
         :param time_dom: 2D tuple of the form (t1,t2)
         :param time_points: integer containing the number of temporal dimension points
         """
-
         self.space_dom = space_dom
         self.time_dom = time_dom
         self.space_points = space_points
